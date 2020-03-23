@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/xubaoshi/vue-ast/issues"
   },
-  "homepage": "https://github.com/xubaoshi/vue-ast#readme"
+  "homepage": "https://github.com/xubaoshi/vue-ast#readme",
+  "dependencies": {
+    "@babel/generator": "^7.9.3",
+    "@babel/parser": "^7.9.3",
+    "@babel/traverse": "^7.9.0",
+    "@babel/types": "^7.9.0"
+  }
 }
