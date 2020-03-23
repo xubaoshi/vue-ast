@@ -18,6 +18,7 @@ const formatContent = function(source, isSFC) {
 }
 const source = fs.readFileSync('./components/ThemeSelect/index.vue', 'utf-8')
 const component = formatContent(source.toString(), true)
+console.log(component.js)
 const vast = babylon.parse(component.js, {
   sourceType: 'module'
 })

@@ -3,17 +3,18 @@
     <!--<el-select v-model="theme" placeholder="请选择" @change="themeSelect">
     <el-option v-for="item in themeArry" :key="item.label" :label="item.label" :value="item.value"></el-option>
   </el-select>-->
-    <el-dropdown trigger="click" @command="themeSelect" placement="bottom">
+    <el-dropdown trigger="click"
+                 @command="themeSelect"
+                 placement="bottom">
       <div class="checkedTheme">
         <i class="el-icon-arrow-down el-icon--right color"></i>
       </div>
-      <el-dropdown-menu slot="dropdown" class="ThemeOpection">
-        <el-dropdown-item
-          v-for="(item, index) in themeArry"
-          :command="item.value"
-          :key="index"
-          :disabled="item.value == theme"
-        >
+      <el-dropdown-menu slot="dropdown"
+                        class="ThemeOpection">
+        <el-dropdown-item v-for="(item, index) in themeArry"
+                          :command="item.value"
+                          :key="index"
+                          :disabled="item.value == theme">
           {{ item.label }}
         </el-dropdown-item>
       </el-dropdown-menu>
@@ -24,7 +25,7 @@
 <script>
 export default {
   name: 'index',
-  data() {
+  data () {
     return {
       theme: ''
     }
@@ -37,21 +38,20 @@ export default {
     isVisible: {
       type: Boolean
     },
-    // 组件依赖
-    denpence: {
-      default: '1,2,3'
+    isVisible2: {
+      type: Boolean
     }
   },
-  mounted() {
+  mounted () {
     this.getTheme()
   },
   methods: {
-    getTheme() {
+    getTheme () {
       let theme = localStorage.getItem('theme')
       this.theme = theme
       window.document.documentElement.setAttribute('data-theme', theme)
     },
-    themeSelect(value) {
+    themeSelect (value) {
       console.log('value=', value)
       this.theme = value
       window.document.documentElement.setAttribute('data-theme', value)
@@ -62,7 +62,7 @@ export default {
 </script>
 
 <style rel="stylesheet/scss" lang="scss" scoped>
-@import '~@/styles/common';
+@import "~@/styles/common";
 .themeSelect {
   height: 60px;
   line-height: 60px;
@@ -79,7 +79,7 @@ export default {
     border-radius: 3px;
   }
 }
-html[data-theme='greenTheme'] {
+html[data-theme="greenTheme"] {
   .checkedTheme {
     .color {
       background: $success-color;
